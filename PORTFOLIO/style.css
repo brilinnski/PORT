@@ -1,0 +1,155 @@
+:root {
+	color-scheme: dark;
+	background: #000;
+	color: #fff;
+	font-family: "Helvetica World", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+html,
+body {
+	min-width: 320px;
+	min-height: 100%;
+	margin: 0;
+}
+
+body {
+	min-height: 100vh;
+	background: #000;
+	overflow-x: hidden;
+}
+
+.hero {
+	display: grid;
+	min-height: 100vh;
+	place-items: center;
+	padding: 32px;
+}
+
+.hero-link {
+	display: block;
+	color: inherit;
+	text-align: center;
+	text-decoration: none;
+	outline-offset: 16px;
+	transition: opacity 320ms ease, filter 320ms ease;
+}
+
+.hero-title {
+	margin: 0;
+	font-size: 56px;
+	font-weight: 700;
+	line-height: 0.59;
+	letter-spacing: -0.112em;
+	text-shadow: 0 0 7px #fff, 0 0 17px rgb(255 255 255 / 72%), 0 0 34px rgb(255 255 255 / 38%);
+}
+
+.hero-title span {
+	display: block;
+	white-space: nowrap;
+}
+
+.hero-link:hover {
+	filter: brightness(1.2);
+}
+
+.hero-link:focus-visible {
+	outline: 2px solid #fff;
+}
+
+body.is-leaving .hero-link {
+	opacity: 0;
+	filter: blur(8px);
+}
+
+.next-screen {
+	position: relative;
+	min-height: 100vh;
+	min-height: 100svh;
+	overflow: hidden;
+	background: #000;
+}
+
+.next-content {
+	position: absolute;
+	inset: 16vh 24px auto;
+	z-index: 1;
+	display: grid;
+	justify-items: center;
+	gap: 22px;
+	text-align: center;
+}
+
+.next-title {
+	margin: 0;
+	font-size: 48px;
+	font-weight: 700;
+	letter-spacing: -0.112em;
+	text-shadow: 0 0 8px #fff, 0 0 24px rgb(255 255 255 / 55%);
+}
+
+.back-link {
+	color: rgb(255 255 255 / 65%);
+	font-size: 14px;
+	text-decoration: none;
+	transition: color 180ms ease;
+}
+
+.back-link:hover,
+.back-link:focus-visible {
+	color: #fff;
+}
+
+.letter-field {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	height: 55vh;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	font-size: clamp(128px, 25vh, 268px);
+	font-weight: 700;
+	letter-spacing: -0.112em;
+	line-height: 0.72;
+	color: #fff;
+	user-select: none;
+}
+
+.letter-field span {
+	display: block;
+	white-space: nowrap;
+}
+
+.audio-play {
+	border: 1px solid rgb(255 255 255 / 48%);
+	padding: 10px 16px;
+	background: transparent;
+	color: #fff;
+	font: inherit;
+	cursor: pointer;
+}
+
+.audio-play:hover,
+.audio-play:focus-visible {
+	background: rgb(255 255 255 / 12%);
+}
+
+@media (max-width: 760px) {
+	.next-title {
+		font-size: 36px;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	*,
+	*::before,
+	*::after {
+		scroll-behavior: auto !important;
+		transition-duration: 0.01ms !important;
+	}
+}
